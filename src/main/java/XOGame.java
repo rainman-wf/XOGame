@@ -89,7 +89,6 @@ public class XOGame {
                     request = new EditMessageText(gameId, sender.getName() + " vs " + opponentName)
                             .replyMarkup(new InlineKeyboardMarkup(buttonsField(charMatrix)));
                 } else {
-                    System.out.println(playerMap.remove(sender.getPlayerIdForRemove()));
                     gameMap.remove(gameId);
                     request = new EditMessageText(gameId, "Canceled");
                 }
