@@ -19,8 +19,7 @@ import java.util.Map;
 
 public class XOGame {
 
-    private final TelegramBot bot = new TelegramBot(System.getenv("TOKEN"));
-    private final String imageUrl = System.getenv("IMG_URL");
+    private final TelegramBot bot = new TelegramBot("5220200952:AAHZWYPCEDx44idXsgPhZl6KNXQrQyr7EcY");
 
     public Map<Long, Player> playerMap = new HashMap<>();
     public Map<String, Game> gameMap = new HashMap<>();
@@ -149,6 +148,9 @@ public class XOGame {
 
     private InlineQueryResultArticle resultArticle(@NotNull InlineQuery inlineQuery) {
 
+        String imageUrl = "https://e7.pngegg.com/pngimages/50/629/png-" +
+                "clipart-challenge-your-friends-2player-tic-tac-toe-best-tic-tac-toe-tic" +
+                "-tac-toe-games-android-game-angle.png";
         return new InlineQueryResultArticle(
                 "xoGame",
                 "\uD83D\uDD79 Start the Game",
