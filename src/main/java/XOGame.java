@@ -43,11 +43,7 @@ public class XOGame {
 
         if (inlineQuery != null) {
             boolean isPlayerInGame = playerMap.containsKey(inlineQuery.from().id()); // если игрок в игре
-            if (!isPlayerInGame) {
-                request = answerInlineQuery(inlineQuery).cacheTime(1);
-            } else {
-                System.out.println("Player " + inlineQuery.from().id() + " in game");
-            }
+            if (!isPlayerInGame) request = answerInlineQuery(inlineQuery).cacheTime(1);
         }
 
         if (chosenInlineResult != null) { // если пришло приглашение в игру
@@ -121,8 +117,6 @@ public class XOGame {
                             } else {
                                 request = gameOverResult(game, gameID, currentPlayer.getName() + " is Winner");
                             }
-                        } else {
-                            System.out.println("ячейка занята");
                         }
                     }
                 }
@@ -149,8 +143,8 @@ public class XOGame {
     private InlineQueryResultArticle resultArticle(@NotNull InlineQuery inlineQuery) {
 
         String imageUrl = "https://e7.pngegg.com/pngimages/50/629/png-" +
-                "clipart-challenge-your-friends-2player-tic-tac-toe-best-tic-tac-toe-tic" +
-                "-tac-toe-games-android-game-angle.png";
+                "clipart-challenge-your-friends-2player-tic-tac-toe-best-" +
+                "tic-tac-toe-tic-tac-toe-games-android-game-angle.png";
         return new InlineQueryResultArticle(
                 "xoGame",
                 "\uD83D\uDD79 Start the Game",
